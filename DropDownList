@@ -1,0 +1,108 @@
+Front-end:
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            font-size: xx-large;
+        }
+        .auto-style2 {
+            font-size: large;
+        }
+        .auto-style3 {
+            font-size: x-large;
+            color: #CC0000;
+        }
+        .auto-style4 {
+            color: #FFFFCC;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+        </div>
+        <center>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        <br class="auto-style4" />
+            <strong><span class="auto-style3">CALCULADORA C#</span></strong><br />
+            <br />
+        <br class="auto-style2" />
+            <asp:Label ID="num1" runat="server" CssClass="auto-style2" Text="DIGITE UM NÚMERO"></asp:Label>
+            <span class="auto-style2">&nbsp; </span> <asp:TextBox ID="TextBox1" runat="server" CssClass="auto-style2" OnTextChanged="num1_TextChanged" style="height: 22px"></asp:TextBox>
+        <br class="auto-style2" />
+        <br class="auto-style2" />
+            <asp:Label ID="num2" runat="server" CssClass="auto-style2" Text="DIGITE UM NÚMERO"></asp:Label>
+            <span class="auto-style2">&nbsp;&nbsp; </span> <asp:TextBox ID="TextBox2" runat="server" CssClass="auto-style2"></asp:TextBox>
+        <br class="auto-style2" />
+        <p>
+            <asp:DropDownList ID="operacao" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" CssClass="auto-style2">
+                <asp:ListItem>Escolha</asp:ListItem>
+                <asp:ListItem Value="+">Somar</asp:ListItem>
+                <asp:ListItem Value="-">Subtrair</asp:ListItem>
+                <asp:ListItem Value="*">Multiplicar</asp:ListItem>
+                <asp:ListItem Value="/">Dividir</asp:ListItem>
+            </asp:DropDownList>
+            <span class="auto-style2">&nbsp;&nbsp;&nbsp;
+        &nbsp;
+        </span>
+        <asp:Button ID="executar" runat="server" Text="Executar" CssClass="auto-style2" OnClick="executar_Click" /></p>
+            <p>
+                <span class="auto-style1">&nbsp; </span>
+                <asp:Label ID="lblresul" runat="server" CssClass="auto-style1"></asp:Label>
+            </p>
+   </center>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+    </form>
+</body>
+</html>
+
+Back-end:
+ protected void executar_Click(object sender, EventArgs e)
+        {
+            
+            if (operacao.SelectedValue == "+")
+            {
+                int num1 = Convert.ToInt32(TextBox1.Text);
+                int num2 = Convert.ToInt32(TextBox2.Text);
+                int somar = num1 + num2;
+                lblresul.Text = somar.ToString();
+
+            }
+            else if (operacao.SelectedValue == "-")
+            {
+                int num1 = Convert.ToInt32(TextBox1.Text);
+                int num2 = Convert.ToInt32(TextBox2.Text);
+                int subtrair = num1 - num2;
+                lblresul.Text = subtrair.ToString();
+            }
+            else if (operacao.SelectedValue == "*")
+            {
+
+                int num1 = Convert.ToInt32(TextBox1.Text);
+                int num2 = Convert.ToInt32(TextBox2.Text);
+                int multiplicar = num1 * num2;
+                lblresul.Text = multiplicar.ToString();
+            }
+            else if (operacao.SelectedValue == "/")
+            {
+                double num1 = Convert.ToInt32(TextBox1.Text);
+                double num2 = Convert.ToInt32(TextBox2.Text);
+                double dividir = num1 / num2;
+                lblresul.Text = dividir.ToString();
+            }
