@@ -1,0 +1,93 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="timesdefutebol.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            color: #FF0000;
+            font-family: "Times New Roman", Times, serif;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+        </div>
+        <center>
+            <br />
+            <br />
+            <br />
+        <p>
+            <span class="auto-style1">&nbsp;</span><asp:Label ID="lbltitulo" runat="server" style="color: #800000" Text="TIMES DE FUTEBOL: "></asp:Label>
+&nbsp;<asp:DropDownList ID="dropTimes" runat="server" Height="50px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" style="background-color: #FFFFFF" Width="80px">
+                <asp:ListItem>Escolha</asp:ListItem>
+                <asp:ListItem>Corinthians</asp:ListItem>
+                <asp:ListItem>São Paulo</asp:ListItem>
+                <asp:ListItem>Santos </asp:ListItem>
+                <asp:ListItem>Palmeiras </asp:ListItem>
+                <asp:ListItem>Real Madrid</asp:ListItem>
+            </asp:DropDownList>
+        </p>
+            <p>
+                &nbsp;</p>
+        <p>
+            <asp:Button ID="btnexecutar" runat="server" Height="35px" OnClick="Button1_Click" style="background-color: #FFFFFF" Text="Executar" Width="100px" />
+        </p>
+            <p>
+                &nbsp;</p>
+        <asp:Label ID="lblresul" runat="server" Height="40px" Width="70px" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"></asp:Label>
+            <br />
+            <br />
+            <asp:Image ID="imgTime" runat="server" Height="300px" Width="300px" />
+     </center>
+    </form>
+</body>
+</html>
+
+  protected void Button1_Click(object sender, EventArgs e)
+        {
+            string times = dropTimes.SelectedValue.ToString();
+
+            if (times == "Corinthians")
+            {
+                lblresul.Text = "AQUI TEM UM BANDO DE LOUCOS, LOUCOS POR TI CORINTHIANS!";
+                imgTime.ImageUrl = "imagens/corinthians.png";
+            }
+
+            else if (times == "São Paulo")
+            {
+                lblresul.Text = "Vamos, Tricolor!";
+                imgTime.ImageUrl = "imagens/sao-paulo.png";
+            }
+
+
+            else if (times == "Santos ")
+            {
+                lblresul.Text = "O nosso Peixe, é o símbolo da superação, da luta incansável por vitórias!";
+                imgTime.ImageUrl = "imagens/santos.png";
+            }
+
+
+            else if (times == "Palmeiras ")
+            {
+                lblresul.Text = "Ser palmeirense é ter luta, resiliência e perseverança no DNA!";
+                imgTime.ImageUrl = "imagens/palmeiraas.png";
+            }
+
+
+            else if (times == "Real Madrid")
+            {
+                lblresul.Text = "Real Madrid tem 9 Champions, mas quantas tu viu?!";
+                imgTime.ImageUrl = "imagens/real.png";
+            }
+
+            else if (times == "Escolha")
+            {
+                lblresul.Text = "";
+                imgTime.ImageUrl = "";
+            }
