@@ -1,0 +1,14 @@
+Adicionar fotos:
+- Abrir a caixa de ferramentas e selecionar "Image";
+- Salvar as fotos na MÁQUINA (Tem que ser dentro da máquina / VM para que dê certo);
+- Criar uma pasta chamada "imagens" ou "img";
+- Adicionar "ítens existentes" e selecionar as fotos escolhidas;
+- Digitar a seguinte linha:
+imgTime.ImageUrl = "imagens/real.png";  --> Para mudar de foto conforme a escolhida
+
+Para foto fixa:
+- Abrir a caixa de ferramentas e selecionar "Image";
+- Salvar as fotos na MÁQUINA (Tem que ser dentro da máquina / VM para que dê certo);
+- Criar uma pasta chamada "imagens" ou "img";
+- Clicar com o botão direito no elemento "Image" e ir nas propriedades;
+- Procurar por "ImageUrl" e adicionar o nome da imagem salva;
