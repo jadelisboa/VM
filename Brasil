@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        .auto-style2 {
+            font-family: Arial;
+            color: rgb(0, 0, 0);
+        }
+        .auto-style3 {
+            color: rgb(0, 0, 0);
+        }
+        .auto-style4 {
+            color: rgb(0, 0, 0);
+            background-color: #009933;
+        }
+        .auto-style5 {
+            color: #009933;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <center>
+            <p>
+                &nbsp;</p>
+            <p>
+                &nbsp;</p>
+            <p style="height: 132px; width: 598px">
+                <asp:Label ID="lbltitulo" runat="server" Text="O Brasil" CssClass="auto-style5" style="font-weight: 700"></asp:Label>
+                <br class="auto-style5" />
+                <br class="auto-style3" />
+                <span class="auto-style3" style="font-family: Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">O Brasil, um vasto país sul-americano, estende-se da Bacia Amazônica, no norte, até os vinhedos e as gigantescas Cataratas do Iguaçu, no sul. O Rio de Janeiro, simbolizado pela sua estátua de 38 metros de altura do Cristo Redentor, situada no topo do Corcovado, é famoso pelas movimentadas praias de Copacabana e Ipanema, bem como pelo imenso e animado Carnaval, com desfiles de carros alegóricos, fantasias extravagantes e samba.</span></p>
+            <p>
+            <asp:Label ID="lblregioes" runat="server" Text="Regiões:"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:DropDownList ID="dropregioes" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dropregioes_SelectedIndexChanged">
+                <asp:ListItem>Escolha</asp:ListItem>
+                <asp:ListItem>Sul</asp:ListItem>
+                <asp:ListItem>Sudeste</asp:ListItem>
+                <asp:ListItem>Norte</asp:ListItem>
+                <asp:ListItem>Nordeste</asp:ListItem>
+                <asp:ListItem>Centro-Oeste</asp:ListItem>
+            </asp:DropDownList>
+&nbsp;
+        </p>
+            <br />
+            <asp:Panel ID="painelSul" runat="server" Height="62px" style="background-color: #FF9933" Visible="False" Width="537px">
+                <span class="auto-style3" style="font-family: Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">A Região Sul do Brasil é a menor das cinco regiões do país, com área territorial de 576 774,31 km², sendo maior que a área da França metropolitana e menor que o estado brasileiro de Minas Gerais. Faz parte da Região Centro-Sul do Brasil.</span></asp:Panel>
+            <br />
+            <asp:Panel ID="painelSudeste" runat="server" Height="116px" style="background-color: #009900" Visible="False" Width="543px">
+                <span class="auto-style4" style="font-family: Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">O sudeste brasileiro é uma região que engloba os 4 estados vizinhos de Rio de Janeiro, São Paulo, Minas Gerais e Espírito Santo. O estado costeiro do Rio de Janeiro é conhecido pela sua capital, a cidade do Rio de Janeiro, onde os pontos de referência incluem o Pão de Açúcar e a estátua do Cristo Redentor. A capital do estado de São Paulo, a vasta cidade de São Paulo, é o centro financeiro do Brasil e alberga edifícios icónicos como uma catedral neogótica.</span></asp:Panel>
+            <br />
+            <asp:Panel ID="painelNorte" runat="server" Height="110px" style="background-color: #006666" Visible="False" Width="541px">
+                <span class="auto-style2" style="font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">O norte do Brasil engloba os estados de Acre, Amapá, Amazonas, Pará, Rondônia, Roraima e Tocantins. A floresta tropical da Amazónia, célebre pela sua biodiversidade, abrange a maior parte da região. No estado do Amazonas, a cidade de Manaus encontra-se nas margens do Rio Negro e, por vários quilómetros, a água escura desse rio corre junto à água clara do rio Solimões, no denominado Encontro das Águas. Mais à frente, formam o rio Amazonas.</span></asp:Panel>
+            <br />
+            <asp:Panel ID="painelNordeste" runat="server" Height="80px" style="background-color: #FF0000" Visible="False" Width="551px">
+                <span class="auto-style3" style="font-family: Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">A Região Nordeste é uma das cinco regiões do Brasil definidas pelo Instituto Brasileiro de Geografia e Estatística em 1969. Possui área equivalente à da Mongólia ou do estado do Amazonas, população equivalente à da África do Sul e um IDH alto, também comparável com o da África do Sul.</span></asp:Panel>
+            <br />
+            <asp:Panel ID="painelCO" runat="server" Height="68px" style="background-color: #FF6600" Visible="False" Width="559px">
+                <span class="auto-style3" style="font-family: Arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;">A Região Centro-Oeste é uma das cinco regiões do Brasil definidas pelo IBGE em 1969. É formada por três estados: Goiás, Mato Grosso e Mato Grosso do Sul, mais o Distrito Federal, onde se localiza Brasília, a capital do país e a cidade mais populosa da região.</span></asp:Panel>
+            <p>
+            <asp:Image ID="imgBra" runat="server" Height="300px" Width="300px" />
+        </p>
+
+</center>
+    </form>
+</body>
+</html>
+
+protected void dropregioes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string regioes = dropregioes.SelectedValue.ToString();
+
+            if (regioes == "Sul")
+            {
+                painelSul.Visible = true;
+                painelSudeste.Visible = false;
+                painelNorte.Visible = false;
+                painelNordeste.Visible = false;
+                painelCO.Visible = false;
+                imgBra.ImageUrl = "imagem/sul.jpg";
+
+            }
+
+            else if (regioes == "Sudeste")
+            {
+                painelSul.Visible = false;
+                painelSudeste.Visible = true;
+                painelNorte.Visible = false;
+                painelNordeste.Visible = false;
+                painelCO.Visible = false;
+                imgBra.ImageUrl = "imagem/sudeste.jpg";
+            }
+
+
+            else if (regioes == "Norte")
+            {
+                painelSul.Visible = false;
+                painelSudeste.Visible = false;
+                painelNorte.Visible = true;
+                painelNordeste.Visible = false;
+                painelCO.Visible = false;
+                imgBra.ImageUrl = "imagem/regiao-norte.jpg";
+            }
+
+            else if (regioes == "Nordeste")
+            {
+                painelSul.Visible = false;
+                painelSudeste.Visible = false;
+                painelNorte.Visible = false;
+                painelNordeste.Visible = true;
+                painelCO.Visible = false;
+                imgBra.ImageUrl = "imagem/regiao-Nordeste.jpg";
+            }
+
+
+            else if (regioes == "Centro-Oeste")
+            {
+                painelSul.Visible = false;
+                painelSudeste.Visible = false;
+                painelNorte.Visible = false;
+                painelNordeste.Visible = false;
+                painelCO.Visible = true;
+                imgBra.ImageUrl = "imagem/centroOeste.jpg";
+            }
+
+            else if (regioes == "Escolha")
+            {
+                painelSul.Visible = false;
+                painelSudeste.Visible = false;
+                painelNorte.Visible = false;
+                painelNordeste.Visible = false;
+                painelCO.Visible = false;
+                imgBra.ImageUrl = "imagem/fotob.jpg";
+}
