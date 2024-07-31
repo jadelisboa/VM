@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        .newStyle1 {
+            font-size: medium;
+            font-style: oblique;
+        }
+        .auto-style1 {
+            color: #FF0000;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <center>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+            <br />
+         
+                <span class="auto-style1">QUAL NÚMERO É MAIOR?</span><br />
+            <br />
+            <asp:Label ID="Label1" runat="server" Text="DIGITE UM NÚMERO:"></asp:Label>
+&nbsp;<asp:TextBox ID="txtN1" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Label ID="Label2" runat="server" Text="DIGITE UM NÚMERO:"></asp:Label>
+&nbsp;<asp:TextBox ID="txtN2" runat="server"></asp:TextBox>
+               
+
+        <p>
+            <asp:Button ID="btnAnalisar" runat="server" OnClick="Button1_Click" Text="Analisar" Height="54px" style="font-weight: 700; background-color: #FFFFFF" Width="100px" />
+        </p>
+        <p>
+            <asp:Label ID="Lblresul" runat="server" Height="54px" Width="100px"></asp:Label>
+        </p>
+         </center>
+      </div>
+    </form>
+</body>
+</html>
+
+
+  protected void Button1_Click(object sender, EventArgs e)
+        {
+            int n1 = Convert.ToInt32(txtN1.Text);
+            int n2 = Convert.ToInt32(txtN2.Text);
+
+            if (n1 == n2)
+            {
+             Lblresul.Text = "Os números são iguais.";
+            }
+           else if(n1 < n2)
+            {
+                Lblresul.Text = "O segundo número é maior.";
+            }
+            else if (n1 > n2)
+            {
+                Lblresul.Text = "O primeiro número é maior";
+            }
+             
+        }
+    }
+}
