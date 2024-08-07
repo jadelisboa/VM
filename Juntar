@@ -73,12 +73,48 @@
                 <asp:Label ID="lblresulta" runat="server" style="font-size: x-large"></asp:Label>
             </asp:Panel>
             <br />
-
+ <asp:Panel ID="PanelPI" runat="server" Height="438px" style="margin-right: 0px; background-color: #CCFFFF" Visible="False" Width="638px">
+                <span class="auto-style4">
+                <br />
+                PAR E ÍMPAR</span><br />
+                <br />
+                DIGITE A NUMERAÇÃO DO DROP:&nbsp;
+                <asp:TextBox ID="Txt_VD" runat="server" OnTextChanged="Txt_VD_TextChanged"></asp:TextBox>
+                <br />
+                <br class="auto-style3" />
+                <asp:Button ID="btn_cn" runat="server" CssClass="auto-style3" OnClick="Button1_Click" Text="Criar numeração do Drop" />
+                <br />
+                <br />
+                <asp:DropDownList ID="dpl1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="dpl1_SelectedIndexChanged" style="font-size: large">
+                </asp:DropDownList>
+                <br />
+                <br />
+                &nbsp;<strong>PAR</strong>:&nbsp;&nbsp;&nbsp;<asp:ListBox ID="ListBox_1" runat="server" Height="100px" Width="50px"></asp:ListBox>
+                <br />
+                <br />
+                <strong>ÍMPAR</strong>:
+                <asp:ListBox ID="ListBox_2" runat="server" Height="100px" Width="50px"></asp:ListBox>
+                <br />
+                <br />
+                <br />
+                <br />
+            </asp:Panel>
+            <br/>
             </center>
     </form>
 </body>
 </html>
 
+ protected void Button1_Click(object sender, EventArgs e)
+        {
+            int valordrop = Convert.ToInt32(Txt_VD.Text);
+            dpl1.Items.Clear();
+            
+            for (int i = 1; i <= valordrop; i++)
+            {
+                dpl1.Items.Add(new ListItem(i.ToString(), i.ToString()));
+            }    
+        }
 
 protected void btn_soma_Click(object sender, EventArgs e)
             {
@@ -158,13 +194,49 @@ protected void btn_soma_Click(object sender, EventArgs e)
             {
                 P_Calculadora.Visible = true;
                 P_Maior.Visible = false;
+                PanelPI.Visible = false;
             }
 
             if (escolha == "Maior número")
             {
                 P_Calculadora.Visible = false;
                 P_Maior.Visible = true;
+                PanelPI.Visible = false;
+            }
+                 if (escolha == "Par e Ímpar")
+            {
+                P_Calculadora.Visible = false;
+                P_Maior.Visible = false;
+                PanelPI.Visible = true;
+            }
+
+            if (escolha == "Escolha")
+            {
+                P_Calculadora.Visible = false;
+                P_Maior.Visible = false;
+                PanelPI.Visible = false;
             }
         }
     }
     }
+protected void dpl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int numero = Convert.ToUInt16(dpl1.SelectedValue.ToString());
+
+            ListBox_1.Items.Clear();
+            ListBox_2.Items.Clear();
+
+            for (int i = 1; i <= numero; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    ListBox_1.Items.Add(i.ToString());
+                }
+                else
+                {
+                    ListBox_2.Items.Add(i.ToString());
+                }
+            }
+        }
+    }
+}
