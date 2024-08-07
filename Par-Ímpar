@@ -1,0 +1,15 @@
+int numero = Convert.ToUInt16(dpl1.SelectedValue.ToString());
+
+            ListBox_1.Items.Clear();
+            ListBox_2.Items.Clear();
+
+            for (int i = 1; i <= numero; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    ListBox_1.Items.Add(i.ToString());
+                }
+                else
+                {
+                    ListBox_2.Items.Add(i.ToString());
+                }
