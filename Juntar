@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            font-size: x-large;
+        }
+        .auto-style2 {
+            font-size: x-large;
+            color: #660033;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+        </div>
+        <center>
+            <br />
+            <br />
+            <br />
+            <br />
+            <span class="auto-style2">TRABALHOS RECENTES:</span><br class="auto-style1" />
+        <br />
+        <asp:DropDownList ID="dpdescolha" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack="True" style="font-size: x-large">
+            <asp:ListItem>Escolha</asp:ListItem>
+            <asp:ListItem>Calculadora</asp:ListItem>
+            <asp:ListItem>Maior número</asp:ListItem>
+        </asp:DropDownList>
+
+            <br />
+            <br />
+            <asp:Panel ID="P_Calculadora" runat="server" Height="216px" style="background-color: #FFCCFF" Visible="False" Width="620px">
+                <br />
+                CALCULADORA<br />
+                <br />
+                DIGITE UM NÚMERO:
+                <asp:TextBox ID="txt_calculado" runat="server"></asp:TextBox>
+                <br />
+                <br />
+                DIGITE UM NÚMERO:
+                <asp:TextBox ID="txt_calcu" runat="server"></asp:TextBox>
+                <br />
+                <br />
+                <asp:Button ID="btn_soma" runat="server" OnClick="btn_soma_Click" style="background-color: #FFFFFF" Text="Soma" />
+                &nbsp;<asp:Button ID="btn_sub" runat="server" OnClick="btn_sub_Click" style="background-color: #FFFFFF" Text="Subtração" />
+                &nbsp;<asp:Button ID="btn_mult" runat="server" OnClick="btn_mult_Click" style="background-color: #FFFFFF" Text="Multiplicação" />
+                &nbsp;<asp:Button ID="btn_div" runat="server" OnClick="btn_div_Click" style="background-color: #FFFFFF" Text="Divisão" />
+                &nbsp;<asp:Button ID="btn_limpar" runat="server" OnClick="btn_limpar_Click" style="background-color: #FFFFFF" Text="Limpar" />
+                <br />
+                <br />
+                <asp:Label ID="lblresult" runat="server" style="font-size: small"></asp:Label>
+            </asp:Panel>
+            <br />
+            <asp:Panel ID="P_Maior" runat="server" Height="214px" style="background-color: #FFFFCC" Visible="False" Width="620px">
+                <br />
+                MAIOR E MENOR<br />
+                <br />
+                DIGITE UM NÚMERO:
+                <asp:TextBox ID="Txt_mr" runat="server"></asp:TextBox>
+                <br />
+                <br />
+                DIGITE UM NÚMERO:
+                <asp:TextBox ID="Txt_mn" runat="server"></asp:TextBox>
+                <br />
+                <br />
+                <asp:Button ID="btn_veri" runat="server" OnClick="btn_veri_Click" style="background-color: #FFFFFF" Text="Verificar" />
+                <br />
+                <br />
+                <asp:Label ID="lblresulta" runat="server" style="font-size: x-large"></asp:Label>
+            </asp:Panel>
+            <br />
+
+            </center>
+    </form>
+</body>
+</html>
+
+
+protected void btn_soma_Click(object sender, EventArgs e)
+            {
+                int num1 = Convert.ToInt32(txt_calculado.Text);
+                int num2 = Convert.ToInt32(txt_calcu.Text);
+                int somar = num1 + num2;
+                lblresult.Text = somar.ToString();
+            }
+
+            protected void btn_sub_Click(object sender, EventArgs e)
+            {
+                int num1 = Convert.ToInt32(txt_calculado.Text);
+                int num2 = Convert.ToInt32(txt_calcu.Text);
+                int somar = num1 - num2;
+                lblresult.Text = somar.ToString();
+            }
+
+            protected void btn_mult_Click(object sender, EventArgs e)
+            {
+            double num1 = Convert.ToInt32(txt_calculado.Text);
+            double num2 = Convert.ToInt32(txt_calcu.Text);
+            double somar = num1 * num2;
+                lblresult.Text = somar.ToString();
+            }
+
+            protected void btn_div_Click(object sender, EventArgs e)
+            {
+                double num1 = Convert.ToInt32(txt_calculado.Text);
+                double num2 = Convert.ToInt32(txt_calcu.Text);
+                double somar = num1 / num2;
+                lblresult.Text = somar.ToString();
+            }
+
+            protected void btn_veri_Click(object sender, EventArgs e)
+            {
+                int n1 = Convert.ToInt32(Txt_mr.Text);
+                int n2 = Convert.ToInt32(Txt_mn.Text);
+
+                if (n1 == n2)
+                {
+                    lblresulta.Text = "Os números são iguais.";
+                }
+                else if (n1 < n2)
+                {
+                    lblresulta.Text = "O segundo número é maior.";
+                }
+                else if (n1 > n2)
+                {
+                    lblresulta.Text = "O primeiro número é maior";
+                }
+            }
+
+            protected void btn_limpar_Click(object sender, EventArgs e)
+            {
+                txt_calcu.Text = "";
+                txt_calculado.Text = "";
+                lblresult.Text = "";
+            }
+
+            protected void btn_verifi_Click(object sender, EventArgs e)
+            {
+                string descolha = dpdescolha.SelectedValue.ToString();
+
+                if (descolha == "Maior número")
+                {
+                    P_Calculadora.Visible = false;
+                    P_Maior.Visible = true;
+                }
+
+            }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string escolha = dpdescolha.SelectedValue.ToString();
+
+            if (escolha == "Calculadora")
+            {
+                P_Calculadora.Visible = true;
+                P_Maior.Visible = false;
+            }
+
+            if (escolha == "Maior número")
+            {
+                P_Calculadora.Visible = false;
+                P_Maior.Visible = true;
+            }
+        }
+    }
+    }
