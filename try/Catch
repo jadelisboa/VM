@@ -1,0 +1,12 @@
+ try
+            {
+                int num1 = Convert.ToInt32(txt_calculado.Text);
+                int num2 = Convert.ToInt32(txt_calcu.Text);
+                int somar = num1 + num2;
+                lblresult.Text = somar.ToString();
+            }
+            catch (Exception erro)
+            {
+                lblresult.Text = "Houve um problema. Tente novamente!";
+            }
+                
